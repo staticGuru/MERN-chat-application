@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useHistory } from "react-router";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
+import Colors from "../util/Colors";
 
 function Homepage() {
   const history = useHistory();
@@ -28,21 +29,21 @@ function Homepage() {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        bg={Colors.primary}
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
-        borderWidth="1px"
+      
       >
-        <Text fontSize="4xl" fontFamily="Work sans">
-          Talk-A-Tive
+        <Text fontSize="4xl" fontFamily="Work sans" color={Colors.secondary} fontWeight="bold">
+          Free-Talk
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box bg={Colors.primary} w="100%" p={4} borderRadius="lg">
         <Tabs isFitted variant="soft-rounded">
-          <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+          <TabList mb="1em" colorScheme={Colors.secondary}>
+            <Tab _selected={{ color: 'white', bg: Colors.secondary,border:'none'}}  color={Colors.secondary}>Login</Tab>
+            <Tab  _selected={{ color: 'white', bg: Colors.secondary,border:'none' }} color={Colors.secondary}>Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

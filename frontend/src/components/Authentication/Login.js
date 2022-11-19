@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
+import Colors from "../../util/Colors";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -72,34 +73,36 @@ const Login = () => {
   return (
     <VStack spacing="10px">
       <FormControl id="email" isRequired>
-        <FormLabel>Email Address</FormLabel>
+        <FormLabel color={Colors.secondary}>Email Address</FormLabel>
         <Input
           value={email}
           type="email"
+          style={{color:Colors.secondary,outline:'none',border:'none'}}
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
       <FormControl id="password" isRequired>
-        <FormLabel>Password</FormLabel>
+        <FormLabel color={Colors.secondary}>Password</FormLabel>
         <InputGroup size="md">
           <Input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            style={{color:Colors.secondary,outline:'none',border:'none'}}
             type={show ? "text" : "password"}
             placeholder="Enter password"
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" color="white" bgColor={Colors.secondary} onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
       </FormControl>
       <Button
-        colorScheme="blue"
+       
         width="100%"
-        style={{ marginTop: 15 }}
+        style={{ marginTop: 15,backgroundColor:Colors.secondary,color:'white' }}
         onClick={submitHandler}
         isLoading={loading}
       >
