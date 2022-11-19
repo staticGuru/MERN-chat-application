@@ -31,6 +31,7 @@ import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
+import Colors from "../../util/Colors";
 
 function SideDrawer() {
   const [search, setSearch] = useState("");
@@ -128,21 +129,22 @@ function SideDrawer() {
         d="flex"
         justifyContent="space-between"
         alignItems="center"
-        bg="white"
+        bg={Colors.primary} 
         w="100%"
         p="5px 10px 5px 10px"
         borderWidth="5px"
+        borderColor={Colors.primary}
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button variant="ghost" onClick={onOpen}>
             <i className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4}>
+            <Text d={{ base: "none", md: "flex"}} color={Colors.secondary} px={4}>
               Search User
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl" fontFamily="Work sans">
-          Talk-A-Tive
+        <Text fontSize="2xl" fontFamily="Work sans" fontWeight="bold" color={Colors.secondary}>
+          Free-Talk
         </Text>
         <div>
           <Menu>

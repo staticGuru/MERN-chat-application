@@ -100,7 +100,6 @@ const Login = () => {
         </InputGroup>
       </FormControl>
       <Button
-       
         width="100%"
         style={{ marginTop: 15,backgroundColor:Colors.secondary,color:'white' }}
         onClick={submitHandler}

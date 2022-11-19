@@ -6,6 +6,7 @@ import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
+import Colors from "../../util/Colors";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -132,25 +133,27 @@ const Signup = () => {
   return (
     <VStack spacing="5px">
       <FormControl id="first-name" isRequired>
-        <FormLabel>Name</FormLabel>
+        <FormLabel color={Colors.secondary}>Name</FormLabel>
         <Input
           placeholder="Enter Your Name"
           onChange={(e) => setName(e.target.value)}
         />
       </FormControl>
       <FormControl id="email" isRequired>
-        <FormLabel>Email Address</FormLabel>
+        <FormLabel color={Colors.secondary}>Email Address</FormLabel>
         <Input
           type="email"
+          style={{color:Colors.secondary,outline:'none',border:'none'}}
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
       <FormControl id="password" isRequired>
-        <FormLabel>Password</FormLabel>
+        <FormLabel color={Colors.secondary}>Password</FormLabel>
         <InputGroup size="md">
           <Input
             type={show ? "text" : "password"}
+            style={{color:Colors.secondary,outline:'none',border:'none'}}
             placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -162,10 +165,11 @@ const Signup = () => {
         </InputGroup>
       </FormControl>
       <FormControl id="password" isRequired>
-        <FormLabel>Confirm Password</FormLabel>
+        <FormLabel color={Colors.secondary}>Confirm Password</FormLabel>
         <InputGroup size="md">
           <Input
             type={show ? "text" : "password"}
+            style={{color:Colors.secondary,outline:'none',border:'none'}}
             placeholder="Confirm password"
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
@@ -177,16 +181,17 @@ const Signup = () => {
         </InputGroup>
       </FormControl>
       <FormControl id="pic">
-        <FormLabel>Upload your Picture</FormLabel>
+        <FormLabel color={Colors.secondary}>Upload your Picture</FormLabel>
         <Input
           type="file"
           p={1.5}
+          style={{color:Colors.secondary,outline:'none',border:'none'}}
           accept="image/*"
           onChange={(e) => postDetails(e.target.files[0])}
         />
       </FormControl>
       <Button
-        colorScheme="blue"
+      color="white" bgColor={Colors.secondary} 
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
